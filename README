@@ -1,3 +1,9 @@
 This project is primarily for my own reference, but if anyone else wishes to use it, go ahead. I've put it under the MIT license, which should be appropriate for most, if not all, use cases.
 
-Templates will make use of Bootstrap, JQuery, and JQueryUI.
+Templates will make use of Bootstrap, JQuery, and JQueryUI. Any other packages used will be noted below.
+
+Other packages (install from PyPI, `pip install <packagename>`):
+	pillow
+	argon2
+	bcrypt
+	django-gravatar2
