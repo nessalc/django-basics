@@ -1,5 +1,7 @@
 This project is primarily for my own reference, but if anyone else wishes to use it, go ahead. I've put it under the MIT license, which should be appropriate for most, if not all, use cases.
 
+Django version used will be the latest and greatest (as of this writing it's 1.10), likewise with Python (as of this writing it's 3.5.2).
+
 Templates will make use of Bootstrap, JQuery, and JQueryUI. Any other packages used will be noted below.
 
 Other packages (install from PyPI, `pip install <packagename>`):
