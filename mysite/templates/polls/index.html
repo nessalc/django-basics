@@ -1,3 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block local_style %}
+{% endblock local_style%}
+
+{% block title %}
+Poll Questions
+{% endblock title %}
+
+{% block main_content %}
 <h1>Poll Questions</h1>
 <h3>Welcome, {{ request.user }}</h3>
 {% if latest_question_list %}
@@ -9,3 +20,4 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock main_content %}
