@@ -1,17 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.conf import settings
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
+from .forms import UserCreationForm
+#from django.contrib.auth.forms import UserCreationForm
 
-# Create your views here.
-def login_view(request):
-    username=request.POST['username']
-    password=request.POST['password']
-    user=authenticate(username=username,password=password)
-    if user is not None:
-        login(request,user)
-        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+def register_user(request):
+    if request.method=='POST':
+        form=UserCreationForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            login(request,user)
+            return HttpResponseRedirect('/polls/')
     else:
-        return redirect('/login')
-
-def logout_view(request):
-    logout(request)
+        form=UserCreationForm()
+    return render(request,'myuser/register.html',{'form':form})

@@ -20,6 +20,5 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^login/$', auth_views.login, {'template_name':'login.html'}),
-    url(r'^', include('django.contrib.auth.urls')),
+    url(r'^account/', include('myuser.urls')),
 ]
