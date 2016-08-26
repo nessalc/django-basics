@@ -27,6 +27,8 @@ class MyUser(AbstractBaseUser):
     kudos_points = models.PositiveIntegerField(default=0)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    activation_key = models.CharField(max_length=16,editable=False,blank=True)
+    key_expiration = models.DateTimeField(editable=False,null=True)
     objects=MyUserManager()
     USERNAME_FIELD = 'email'
     def __str__(self):
@@ -42,3 +44,6 @@ class MyUser(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin
+    def set_activation(self,key,expiration):
+        self.activation_key=key
+        self.key_expiration=expiration

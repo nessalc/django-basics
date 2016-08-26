@@ -84,6 +84,19 @@ DATABASES = {
     }
 }
 
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_FILE_PATH = ''
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = ''
+EMAIL_PORT = 1025
+EMAIL_SUBJECT_PREFIX = '[Django] '
+#EMAIL_USE_TLS = True
+#EMAIL_USE_SSL = False
+#EMAIL_SSL_CERTFILE = None
+#EMAIL_SSL_KEYFILE = None
+#EMAIL_TIMEOUT = None
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 

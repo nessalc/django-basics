@@ -47,16 +47,14 @@ body {
 
 {% block main_content %}
 <div class="form-signin">
-<form class="form-signin" method="post" action="{% url 'myuser:register' %}">
+<form class="form-signin" method="post" action="{% url 'myuser:activate' %}">
 {% csrf_token %}
-<h2 class="form-signin-heading">Please Register</h2>
+<h2 class="form-signin-heading">Activate your account</h2>
 <label for="{{ form.email.id_for_label }}" class="sr-only">{{ form.email.label }}</label>
 <input type="text" maxlength="254" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="{{ form.email.label }}" class="form-control" required autofocus />
-<label for="{{ form.password1.id_for_label }}" class="sr-only">{{ form.password1.label }}</label>
-<input type="password" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" class="form-control" placeholder="{{ form.password1.label }}" required />
-<label for="{{ form.password1.id_for_label }}" class="sr-only">{{ form.password2.label }}</label>
-<input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" class="form-control" placeholder="{{ form.password2.label }}" required />
-<button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
+<label for="{{ form.key.id_for_label }}" class="sr-only">{{ form.key.label }}</label>
+<input type="password" id="{{ form.key.id_for_label }}" name="{{ form.key.name }}" class="form-control" placeholder="{{ form.key.label }}" required />
+<button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Activate</button>
 <input type="hidden" name="next" value="{{ next }}" />
 <p style="text-align:center;"><a href="{% url 'myuser:password_reset' %}">Forget your password?</a></p>
 </form>

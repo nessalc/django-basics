@@ -1,0 +1,11 @@
+/* TEAM */
+	Everything: James Classen
+	Contact: james [at] radicalis.net
+	Twitter: @j_classen
+	From: Andover, Kansas, United States
+
+/* SITE */
+	Last update: 2016/08/26
+	Standards: HTML5, CSS3
+	Components: Bootstrap, jQuery, Django
+	Software: Notepad++, vim

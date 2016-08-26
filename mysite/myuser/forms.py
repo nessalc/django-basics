@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib import admin
-#from django.contrib.auth.forms import UserCreationForm
 from .models import MyUser
 
 class UserCreationForm(forms.ModelForm):
@@ -21,3 +20,7 @@ class UserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class UserActivationForm(forms.Form):
+    email=forms.EmailField(label='Email')
+    key=forms.CharField(label='Activation Key',max_length=16)
