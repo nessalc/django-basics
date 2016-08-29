@@ -46,19 +46,10 @@ body {
 {% endblock local_style %}
 
 {% block main_content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-{% if next %}
-	{% if user.is_authenticated %}
-	<p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
-	{% else %}
-	<p>Please login to see this page.</p>
-	{% endif %}
-{% endif %}
-<form class="form-signin" method="post" action="{% url 'myuser:login' %}">
+<form class="form-signin{% if form.errors %} has-error{% endif %}" method="post">
 {% csrf_token %}
 <h2 class="form-signin-heading">Please sign in</h2>
+{% if form.errors %}<p class="help-block">Your username and password did not match. Please try again.{% endif %}
 <label for="{{ form.username.id_for_label }}" class="sr-only">{{ form.username.label }}</label>
 <input type="email" maxlength="254" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" placeholder="{{ form.username.label }}" class="form-control" required autofocus />
 <label for="{{ form.password.id_for_password }}" class="sr-only">{{ form.password.label }}</label>
